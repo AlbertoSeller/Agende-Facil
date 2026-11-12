@@ -6,7 +6,6 @@
 
 ```text
 Agendar/
-├── assets/
 ├── css/
 │   └── styles.css
 ├── js/
