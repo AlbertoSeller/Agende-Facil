@@ -1,0 +1,536 @@
+
+/* ==========================================
+   AGENDA FÁCIL
+   CSS - VERSÃO CONSOLIDADA
+   ========================================== */
+
+/* 1. VARIÁVEIS E CONFIGURAÇÕES GERAIS */
+
+:root {
+    --primary: #145da0;
+    --primary-dark: #104575;
+    --background: #f5f8fc;
+    --surface: #ffffff;
+    --text: #253447;
+    --muted: #526477;
+    --border: #dce5ee;
+    --focus: #e49b22;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* 2. ACESSIBILIDADE */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0.625rem;
+    z-index: 1100;
+    padding: 0.75rem 1.125rem;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 0.5rem;
+}
+
+.skip-link:focus {
+    top: 0.625rem;
+}
+
+:focus-visible {
+    outline: 4px solid var(--focus) !important;
+    outline-offset: 4px !important;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+/* 3. CABEÇALHO FIXO DURANTE A ROLAGEM */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 5.3125rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--primary);
+    font-size: 1.5625rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand-icon {
+    background: var(--primary);
+    color: #ffffff;
+    width: 2.375rem;
+    height: 2.375rem;
+    border-radius: 0.625rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.75rem;
+}
+
+.accessibility-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.access-button {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.8125rem;
+    color: var(--text);
+    font-weight: bold;
+    min-height: 2.75rem;
+    font-size: 1rem;
+}
+
+/* 4. PÁGINA INICIAL */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    padding-top: 4.6875rem;
+    padding-bottom: 4.6875rem;
+}
+
+.hero-content {
+    max-width: 40.625rem;
+}
+
+.welcome-label {
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 0.0625rem;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    line-height: 1.15;
+    font-weight: bold;
+    margin: 1.125rem 0;
+}
+
+h1 span {
+    color: var(--primary);
+    display: block;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 1.25rem;
+    max-width: 35.625rem;
+}
+
+.primary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.125rem;
+    background: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1.0625rem 1.5625rem;
+    min-height: 3.625rem;
+    border-radius: 0.625rem;
+    margin-top: 1.125rem;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+    color: #ffffff;
+}
+
+.help-text {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    margin-top: 1.125rem;
+}
+
+.hero-illustration {
+    min-width: 16.25rem;
+    min-height: 15.625rem;
+    background: #e1effc;
+    border-radius: 1.5625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.875rem;
+    text-align: center;
+}
+
+.illustration-icon {
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 50%;
+    width: 6.5625rem;
+    height: 6.5625rem;
+    display: grid;
+    place-items: center;
+    font-size: 4.0625rem;
+    margin-bottom: 1.25rem;
+}
+
+.illustration-text strong,
+.illustration-text span {
+    display: block;
+}
+
+.illustration-text strong {
+    font-size: 1.1875rem;
+}
+
+.illustration-text span {
+    color: var(--muted);
+    font-size: 0.9375rem;
+}
+
+/* 5. SEÇÃO DE SERVIÇOS */
+
+.services-section {
+    background: #ffffff;
+    padding: 4.0625rem 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 2.1875rem;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.625rem;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.service-card {
+    height: 100%;
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.875rem;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: box-shadow 0.2s;
+}
+
+.service-card:hover {
+    box-shadow: 0 0.3125rem 1.25rem rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+    width: 3.4375rem;
+    height: 3.4375rem;
+    border-radius: 0.75rem;
+    display: grid;
+    place-items: center;
+    background: #e1effc;
+    color: var(--primary);
+    font-size: 1.875rem;
+    margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+    font-size: 1.4375rem;
+    font-weight: bold;
+}
+
+.service-card p {
+    color: var(--muted);
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.service-button {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 1.0625rem;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    text-align: left;
+    align-self: flex-start;
+}
+
+/* 6. MEUS AGENDAMENTOS */
+
+.appointments-section {
+    padding-top: 3.4375rem;
+    padding-bottom: 3.4375rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.appointments-section h2 {
+    font-size: 1.5625rem;
+    font-weight: bold;
+}
+
+.appointments-section p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.secondary-button {
+    background: #ffffff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 0.5625rem;
+    padding: 0.8125rem 1.25rem;
+    min-height: 3.125rem;
+    font-weight: bold;
+}
+
+/* 7. RODAPÉ */
+
+.site-footer {
+    background: #153653;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.875rem 0.9375rem;
+}
+
+.site-footer p {
+    margin-bottom: 0.3125rem;
+    font-weight: bold;
+}
+
+.site-footer small {
+    color: #e0eaf3;
+    font-size: 0.875rem;
+}
+
+/* 8. ALTO CONTRASTE */
+
+body.high-contrast {
+    --background: #000000;
+    --surface: #000000;
+    --text: #ffffff;
+    --muted: #ffffff;
+    --border: #ffffff;
+    --primary: #ffff00;
+    --primary-dark: #ffff00;
+    --focus: #00ffff;
+}
+
+body.high-contrast .primary-button,
+body.high-contrast .brand-icon,
+body.high-contrast .illustration-icon {
+    background: #ffff00;
+    color: #000000;
+}
+
+body.high-contrast .services-section,
+body.high-contrast .service-card,
+body.high-contrast .access-button,
+body.high-contrast .secondary-button {
+    background: #000000;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.high-contrast .welcome-label,
+body.high-contrast .service-button,
+body.high-contrast h1 span {
+    color: #ffff00;
+}
+
+body.high-contrast .hero-illustration,
+body.high-contrast .service-icon {
+    background: #222222;
+    color: #ffff00;
+}
+
+body.high-contrast .site-footer {
+    background: #000000;
+    border-top: 2px solid #ffffff;
+}
+
+/* 9. RESPONSIVIDADE */
+
+@media (max-width: 767px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+    }
+
+    .accessibility-controls {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 2.8125rem;
+        padding-bottom: 2.8125rem;
+    }
+
+    .hero-illustration {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .appointments-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secondary-button {
+        width: 100%;
+    }
+}
+
+/* 10. MOVIMENTAÇÃO REDUZIDA */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE DO MODAL DE AGENDAMENTO
+   ========================================== */
+
+.booking-progress {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    list-style: none;
+}
+
+.booking-progress li {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.25rem;
+    border-bottom: 3px solid #ccc;
+    overflow-wrap: anywhere;
+}
+
+.booking-progress li.active {
+    border-color: #155eef;
+    color: #155eef;
+    font-weight: 700;
+}
+
+.booking-summary {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: #f1f5f9;
+    overflow-wrap: anywhere;
+}
+
+.booking-summary p {
+    margin-bottom: 0.75rem;
+}
+
+.booking-summary p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 576px) {
+
+    #agendamentoModal .modal-dialog {
+        margin: 0.5rem;
+    }
+
+    #agendamentoModal .modal-content {
+        border-radius: 1rem;
+    }
+
+    #agendamentoModal .modal-header,
+    #agendamentoModal .modal-body,
+    #agendamentoModal .modal-footer {
+        padding: 1rem;
+    }
+
+    .booking-progress {
+        gap: 0.2rem;
+    }
+
+    .booking-progress li {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.1rem;
+    }
+
+    #agendamentoModal .modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    #agendamentoModal .modal-footer button {
+        flex: 1 1 100%;
+        min-height: 48px;
+        margin: 0;
+    }
+
+    .booking-summary {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+    }
+}
